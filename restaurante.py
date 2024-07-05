@@ -1,7 +1,7 @@
 class RestaurantSystem:
     def __init__(self):
         self.orders = {}
-        self.tables = [0] * 10  # 10 tables, initially all available
+        self.tables = [0] * 10  
         self.order_id = 1
 
     def reserve_table(self, num_people):
@@ -61,21 +61,21 @@ class RestaurantSystem:
         discounted_price = original_price * (1 - discount_rate)
         return f"Original price: ${original_price:.2f}, Discounted price: ${discounted_price:.2f}"
 
-# Ejemplo de uso del sistema
+
 restaurant_system = RestaurantSystem()
 
 # Reservar una mesa
-print(restaurant_system.reserve_table(4))  # Esperado: "Table 1 reserved for 4 people."
-print(restaurant_system.reserve_table(11))  # Esperado: "Error: Invalid number of people. Must be between 1 and 10."
+print(restaurant_system.reserve_table(4))  
+print(restaurant_system.reserve_table(11))  
 
 # Crear una orden
 order_details = [{'item': 'Pizza', 'price': 10}, {'item': 'Soda', 'price': 2}]
-print(restaurant_system.create_order(1, order_details))  # Esperado: "Order 1 created."
+print(restaurant_system.create_order(1, order_details))  
 
 # Actualizar estado de la orden
-print(restaurant_system.update_order_state(1, 'PREPARING'))  # Esperado: "Order 1 state updated to PREPARING."
-print(restaurant_system.update_order_state(1, 'PAID'))  # Esperado: "Error: Invalid state transition from PREPARING to PAID."
+print(restaurant_system.update_order_state(1, 'PREPARING'))  
+print(restaurant_system.update_order_state(1, 'PAID'))  
 
 # Aplicar descuento a la orden
-print(restaurant_system.apply_discount(1, 'WELCOME10'))  # Esperado: "Original price: $12.00, Discounted price: $10.80"
-print(restaurant_system.apply_discount(1, 'INVALIDCODE'))  # Esperado: "Error: Invalid discount code."
+print(restaurant_system.apply_discount(1, 'WELCOME10'))  
+print(restaurant_system.apply_discount(1, 'INVALIDCODE'))  
