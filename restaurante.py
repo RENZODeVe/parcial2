@@ -73,7 +73,7 @@ order_details = [{'item': 'Pizza', 'price': 10}, {'item': 'Soda', 'price': 2}]
 print(restaurant_system.create_order(1, order_details))  
 
 # Actualizar estado de la orden
-print(restaurant_system.update_order_state(1, 'PREPARING'))  
+print(restaurant_system.update_order_state(1, 'PREPARING'))
 print(restaurant_system.update_order_state(1, 'PAID'))  
 
 # Aplicar descuento a la orden
